@@ -43,19 +43,19 @@ var md_obj = [];
 })();
 
 async function mdGen() {
+  md_file += `| Name | Latest Commit | Latest Tag | Issues | License | Primary Language | Forks | Stars | Description |`
+  md_file += `| ---- | ------------- | ---------- | ------ | ------- | ---------------- | ----- | ----- | ----------- |`
   for (let i = 0; i < md_obj.length; i++) {
     let tmp = [
-      `\n### [${md_obj[i].name}](${md_obj[i].url})\n`,
-      `![GitHub tag](https://img.shields.io/github/v/tag/${md_obj[i].repo}?style=flat-square)\n`,
-      `![GitHub issues](https://img.shields.io/github/issues/${md_obj[i].repo}?style=flat-square)\n`,
-      `![GitHub License](https://img.shields.io/github/license/${md_obj[i].repo}?style=flat-square)\n`,
-      `![GitHub top language](https://img.shields.io/github/languages/top/${md_obj[i].repo}?style=flat-square)\n`,
-      `![GitHub Forks](https://img.shields.io/github/forks/${md_obj[i].repo}?style=flat-square)\n`,
-      `![GitHub Stars](https://img.shields.io/github/stars/${md_obj[i].repo}?style=flat-square)\n`,
-      `![GitHub last commit](https://img.shields.io/github/last-commit/${md_obj[i].repo}?style=flat-square)\n`,
-      `\n`,
-      `${md_obj[i].desc}\n`,
-      `\n\n` // buffer after each item
+      `| [${md_obj[i].name}](${md_obj[i].url}) | `,
+      `![GitHub last commit](https://img.shields.io/github/last-commit/${md_obj[i].repo}?style=flat-square) | `
+      `![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/${md_obj[i].repo}?style=flat-square) | `,
+      `![GitHub issues](https://img.shields.io/github/issues/${md_obj[i].repo}?style=flat-square) | `,
+      `![GitHub License](https://img.shields.io/github/license/${md_obj[i].repo}?style=flat-square) | `,
+      `![GitHub top language](https://img.shields.io/github/languages/top/${md_obj[i].repo}?style=flat-square) | `,
+      `![GitHub Forks](https://img.shields.io/github/forks/${md_obj[i].repo}?style=flat-square) | `,
+      `![GitHub Stars](https://img.shields.io/github/stars/${md_obj[i].repo}?style=flat-square) | `,
+      `${md_obj[i].desc} |`
     ];
 
     md_file += tmp.join('')
