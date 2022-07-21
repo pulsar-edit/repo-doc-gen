@@ -31,6 +31,8 @@ var md_obj = [];
 
     }
 
+    md_file += `Generated on ${new Date().toISOString()} (UTC)\n\n`;
+
     await mdGen();
 
     // once thats done, lets write the file.
@@ -43,22 +45,22 @@ var md_obj = [];
 })();
 
 async function mdGen() {
-  md_file += `| Name | Latest Commit | Latest Tag | Issues | License | Primary Language | Forks | Stars | Description |`
-  md_file += `| ---- | ------------- | ---------- | ------ | ------- | ---------------- | ----- | ----- | ----------- |`
+  md_file += `| Name | Latest Commit | Latest Tag | Issues | License | Primary Language | Forks | Stars | Description |\n`;
+  md_file += `| ---- | ------------- | ---------- | ------ | ------- | ---------------- | ----- | ----- | ----------- |\n`;
   for (let i = 0; i < md_obj.length; i++) {
     let tmp = [
       `| [${md_obj[i].name}](${md_obj[i].url}) | `,
-      `![GitHub last commit](https://img.shields.io/github/last-commit/${md_obj[i].repo}?style=flat-square) | `
+      `![GitHub last commit](https://img.shields.io/github/last-commit/${md_obj[i].repo}?style=flat-square) | `,
       `![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/${md_obj[i].repo}?style=flat-square) | `,
       `![GitHub issues](https://img.shields.io/github/issues/${md_obj[i].repo}?style=flat-square) | `,
       `![GitHub License](https://img.shields.io/github/license/${md_obj[i].repo}?style=flat-square) | `,
       `![GitHub top language](https://img.shields.io/github/languages/top/${md_obj[i].repo}?style=flat-square) | `,
       `![GitHub Forks](https://img.shields.io/github/forks/${md_obj[i].repo}?style=flat-square) | `,
       `![GitHub Stars](https://img.shields.io/github/stars/${md_obj[i].repo}?style=flat-square) | `,
-      `${md_obj[i].desc} |`
+      `${md_obj[i].desc} |\n`
     ];
 
-    md_file += tmp.join('')
+    md_file += tmp.join('');
 
   }
 }
