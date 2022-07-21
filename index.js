@@ -45,8 +45,8 @@ var md_obj = [];
 })();
 
 async function mdGen() {
-  md_file += `| Name | Latest Commit | Latest Tag | Issues | License | Primary Language | Forks | Stars | Description |\n`;
-  md_file += `| ---- | ------------- | ---------- | ------ | ------- | ---------------- | ----- | ----- | ----------- |\n`;
+  md_file += `| Name | Latest Commit | Latest Tag | Issues | License | Primary Language | Stars | Description |\n`;
+  md_file += `| ---- | ------------- | ---------- | ------ | ------- | ---------------- | ----- | ----------- |\n`;
   for (let i = 0; i < md_obj.length; i++) {
     let tmp = [
       `| [${md_obj[i].name}](${md_obj[i].url}) | `,
@@ -55,7 +55,6 @@ async function mdGen() {
       `![GitHub issues](https://img.shields.io/github/issues/${md_obj[i].repo}?style=flat-square) | `,
       `![GitHub License](https://img.shields.io/github/license/${md_obj[i].repo}?style=flat-square) | `,
       `![GitHub top language](https://img.shields.io/github/languages/top/${md_obj[i].repo}?style=flat-square) | `,
-      `![GitHub Forks](https://img.shields.io/github/forks/${md_obj[i].repo}?style=flat-square) | `,
       `![GitHub Stars](https://img.shields.io/github/stars/${md_obj[i].repo}?style=flat-square) | `,
       `${md_obj[i].desc} |\n`
     ];
