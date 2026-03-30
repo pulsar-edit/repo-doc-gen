@@ -1,3 +1,4 @@
+# This repository is archived under Pulsar-Edit as it's no longer used.
 # repo-doc-gen
 
 Simple utility, that takes a list of JSON files, that can be retrevied via the API request `https://api.github.com/orgs/pulsar-edit/repos?page= `
